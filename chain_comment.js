@@ -3,16 +3,20 @@ const SHA256 = require('crypto-js/sha256');
 
 // Inicializamos o bloco
 class Block {
-    //Declaramos os 4 tipos de dados que um bloco possui:
+    //Declaramos os 4 tipos de dados que um bloco possui
     //=> ["index, timestamp, data, previousHash"]
     //e definimos o previousHash como vazio por default.
     constructor(index, timestamp, data, previousHash = ''){
         //é o valor que representa sua posição dentro da chain.
         this.index = index;
-        //Guarda 
+        //Qual a data  de sua criação
         this.timestamp = timestamp;
+        //Guarda o registro sobre os pontos de transação (sender & client)
         this.data = data;
+        //
+        //Importante para manter a integridade da chain inteira.
         this.previousHash = previousHash;
+        
         this.hash = this.calculateHash();
     }
     
