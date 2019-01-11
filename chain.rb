@@ -5,5 +5,10 @@ class Block
     self.data = data;
     self.previousHash = previousHash;
     self.hash = self.calculateHash();
+	end
+
+	def calculateHash()
+		# return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 	end 
 end 
+
