@@ -1,7 +1,12 @@
 class Block
 	
 	def self.index(index)
+		p "debug ok"
 		@index
+	end
+
+	def self.add_timestamps
+		@timestamp = Time.now
 	end
 	
   def self.count
@@ -23,10 +28,10 @@ class Block
 
 	def initialize(index, timestamp, data, previousHash = '') # Init first block
 		@index = index;
-    self.timestamp = timestamp;
-    self.data = data;
-    self.previousHash = previousHash;
-    self.hash = self.calculateHash();
+    @timestamp = timestamp;
+    data = data;
+    previousHash = previousHash;
+    hash = self.calculateHash();
 	end
 
 	def calculateHash()
