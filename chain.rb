@@ -11,4 +11,4 @@ class Block
 		# return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 	end 
 end 
-
+block = Block.new(0,0,0,0)
