@@ -1,6 +1,28 @@
 class Block
+	
+	def self.index(index)
+		@index
+	end
+	
+  def self.count
+    @count ||= 0
+  end
+
+  def self.count=(increment)
+    @count = increment
+  end
+
+  def initialize(name)
+    @name = name
+    self.class.count += 1
+  end
+
+  def name
+    @name
+  end
+
 	def initialize(index, timestamp, data, previousHash = '') # Init first block
-		self.index = index;
+		@index = index;
     self.timestamp = timestamp;
     self.data = data;
     self.previousHash = previousHash;
