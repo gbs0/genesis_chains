@@ -2,7 +2,7 @@ class Block
 	
 	def self.index(index)
 		p "debug ok"
-		@index
+		p @index
 	end
 
 	def self.add_timestamps
@@ -27,7 +27,7 @@ class Block
   end
 
 	def initialize(index, timestamp, data, previousHash = '') # Init first block
-		@index = index;
+		@index = se
     @timestamp = timestamp;
     data = data;
     previousHash = previousHash;
@@ -38,4 +38,6 @@ class Block
 		# return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 	end 
 end 
+
+
 block = Block.new(0,0,0,0)
